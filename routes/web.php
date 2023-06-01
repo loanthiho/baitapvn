@@ -50,7 +50,14 @@ Route::post('/addproduct',[ProductsController::class,"creatSession"]);
 
 Route::get('showproducts',[ProductsController::class,"showProduct"])->name('showproducts');
 
+
+Route::get('/loai_sanpham/{id}',[PageController::class,'getLoaiSp']);
 Route::get('/trangchu',[PageController::class,'getIndex']);
+Route::get('/detail/{id}',[PageController::class,'getDetail']);
+
+Route::get('/contact',[PageController::class,'getContact']);
+Route::get('/about',[PageController::class,'getAbout']);
+
  Route::get('database',function(){
     Schema::create('loaisanpham',function($table){
         $table->increments('id');
